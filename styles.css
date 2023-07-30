@@ -28,6 +28,7 @@ p {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 li {
@@ -65,6 +66,10 @@ section {
   color: white;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .click {
   transition: all 300ms ease;
 }
@@ -74,7 +79,7 @@ section {
 }
 
 .click:active {
-  transform: scale(0.5);
+  transform: scale(0.9);
 }
 
 .fas,
@@ -112,6 +117,22 @@ section {
 .link__hover-effect:hover:after {
   left: 0;
   width: 100%;
+}
+
+nav,
+.scroll,
+.header {
+  visibility: visible;
+  opacity: 1;
+  transition: all 600ms 800ms;
+}
+
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 400ms ease;
 }
 
 /*
@@ -179,6 +200,17 @@ MODAL
 
 */
 
+.modal--open .modal {
+  z-index: 1000;
+  box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+  visibility: visible;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+  transform: translateX(0%);
+}
+
 .modal {
   position: absolute;
   top: 50%;
@@ -186,11 +218,13 @@ MODAL
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 1100px;
-  height: 600px;
-  box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+  height: 700px;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
+  z-index: -1;
+  visibility: hidden;
+  transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
 
 .modal__half {
@@ -200,6 +234,7 @@ MODAL
   flex-direction: column;
   justify-content: center;
   position: relative;
+  transition: all 400ms ease-in;
 }
 
 .modal__title {
@@ -213,16 +248,18 @@ MODAL
 
 .modal__about {
   background-color: rgb(245, 245, 245);
+  transform: translateX(-110%);
+}
+
+.modal__contact {
+  background-color: #242424;
+  transform: translateX(110%);
 }
 
 .modal__para {
   font-size: 16px;
   margin: 0 0 12px;
   line-height: 1.75;
-}
-
-.modal__contact {
-  background-color: #242424;
 }
 
 .modal__languages {
@@ -261,6 +298,158 @@ MODAL
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+.form__item--label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form__submit {
+  font-size: 20px;
+  padding: 12px 24px;
+  background-color: #008300;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 2px solid #008300;
+  color: white;
+  transition: all 300ms ease;
+  width: 100%;
+  max-width: 240px;
+}
+
+.form__submit:hover {
+  border-color: white;
+  background-color: #242424;
+}
+
+.form__submit:active {
+  border-color: #008300;
+  color: #008300;
+}
+
+input,
+textarea {
+  border: none;
+  border: 3px solid #c0c4cc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+  width: 100%;
+  background-color: #242424;
+  height: 40px;
+  transition: all 300ms ease;
+  outline: none;
+}
+
+textarea {
+  margin: 8px 0 0;
+  height: 100px;
+  resize: vertical;
+}
+
+.input:focus {
+  border-color: #008300;
+}
+
+.modal__overlay {
+  position: absolute;
+  background-color: #242424;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.modal__overlay--loading {
+  background-color: #242424;
+  font-size: 80px;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 28px;
+  color: white;
+}
+
+.modal__overlay--visible {
+  z-index: 1;
+  display: flex;
+}
+
+.fa-spinner {
+  color: white;
+  animation: spinner 750ms infinite ease;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal__exit {
+  position: absolute;
+  font-size: 32px;
+  z-index: 1000;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.dark-theme section {
+  background-color: #242424;
+}
+
+.dark-theme .header__para,
+.dark-theme .section__title,
+.dark-theme .title,
+.dark-theme a {
+  color: white;
+}
+
+.dark-theme .mail__btn {
+  color: #242424;
+  background-color: white;
+}
+
+.dark-theme .scroll__icon {
+  border-color: white;
+}
+
+.dark-theme .scroll__icon:after {
+  background-color: white;
+}
+
+p,
+.section__title,
+.title,
+a,
+section,
+.mail__btn,
+.scroll__icon {
+  transition: all 500ms ease;
+}
+
 /* 
 
 LANDING PAGE 
@@ -330,7 +519,7 @@ LANDING PAGE
   position: fixed;
   bottom: 32px;
   right: 32px;
-  z-index: 100;
+  z-index: 999;
   box-shadow: 0px 12px 30px rgb(0, 0, 0, 0.45);
 }
 
@@ -523,6 +712,94 @@ footer {
   opacity: 1;
 }
 
+/* 
+
+SHAPES
+ 
+shapes on first row 
+height = 15vh
+
+shapes on the second row 
+height = 50vh
+
+shapes on the third row 
+height = 85vh
+
+shapes on first column
+width = 10vw
+
+shapes on second column
+width = 50vw
+
+shapes on third column
+width = 80vw
+*/
+
+.shape {
+  position: fixed;
+  width: 3vh;
+  opacity: 0.7;
+  animation: change-color 1000ms linear infinite;
+  transition: opacity 200ms ease;
+}
+
+@keyframes change-color {
+  0% {
+    filter: invert(0.4);
+  }
+  50% {
+    filter: invert(1);
+  }
+  100% {
+    filter: invert(0.4);
+  }
+}
+
+.shape--0 {
+  top: 15vh;
+  left: 10vw;
+}
+.shape--1 {
+  top: 15vh;
+  left: 50vw;
+}
+.shape--2 {
+  top: 15vh;
+  left: 80vw;
+}
+.shape--3 {
+  top: 50vh;
+  left: 10vw;
+}
+.shape--4 {
+  top: 50vh;
+  left: 50vw;
+}
+.shape--5 {
+  top: 50vh;
+  left: 80vw;
+}
+.shape--6 {
+  top: 85vh;
+  left: 10vw;
+}
+.shape--7 {
+  top: 85vh;
+  left: 50vw;
+}
+.shape--8 {
+  top: 85vh;
+  left: 80vw;
+}
+
+/* MODAL SIZING*/
+
+@media (max-width: 900px) {
+  .modal__para {
+    font-size: 14px;
+  }
+}
+
 /* TABLETS, LARGE SMARTPHONES */
 
 @media (max-width: 768px) {
@@ -531,21 +808,34 @@ footer {
     width: 100%;
     border-radius: none;
     height: auto;
+    top: 0;
+    left: 0;
+    transform: none;
+    overflow: visible;
   }
 
   .modal__half {
     width: 100%;
-    height: 50%;
+    height: auto;
   }
 }
 /* PHONES */
 
 @media (max-width: 480px) {
+  .nav__link--list {
+    justify-content: space-between;
+  }
+
+  .nla__about {
+    position: absolute;
+    visibility: hidden;
+  }
+
   .title {
     font-size: 52px;
   }
   .header__para {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .social__link {
@@ -593,5 +883,10 @@ footer {
     width: 50px;
     height: 50px;
     font-size: 24px;
+  }
+
+  .footer__links {
+    width: 100%;
+    font-size: 14px;
   }
 }
