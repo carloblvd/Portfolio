@@ -167,6 +167,7 @@ nav {
 .nav__logo {
   width: 50px;
   height: 50px;
+  border: 1px solid black;
 }
 
 #personal-logo {
@@ -209,6 +210,11 @@ MODAL
 .modal--open .modal__about,
 .modal--open .modal__contact {
   transform: translateX(0%);
+}
+
+.modal--open .mail__btn {
+  opacity: 0;
+  transition: all 400ms ease;
 }
 
 .modal {
@@ -423,7 +429,8 @@ textarea {
 .dark-theme .header__para,
 .dark-theme .section__title,
 .dark-theme .title,
-.dark-theme a {
+.dark-theme .nav__link--anchor,
+.dark-theme .social__link {
   color: white;
 }
 
@@ -521,6 +528,8 @@ LANDING PAGE
   right: 32px;
   z-index: 999;
   box-shadow: 0px 12px 30px rgb(0, 0, 0, 0.45);
+  opacity: 1;
+  transition: all 500ms 800ms;
 }
 
 .scroll {
@@ -695,7 +704,7 @@ footer {
 }
 
 .footer__img {
-  width: 125%;
+  width: 140%;
 }
 
 .footer__logo--popper {
@@ -817,6 +826,10 @@ width = 80vw
   .modal__half {
     width: 100%;
     height: auto;
+  }
+
+  .modal__contact {
+    transform: translateX(-110%);
   }
 }
 /* PHONES */
