@@ -452,7 +452,6 @@ p,
 .title,
 a,
 section,
-.mail__btn,
 .scroll__icon {
   transition: all 500ms ease;
 }
@@ -529,7 +528,8 @@ LANDING PAGE
   z-index: 999;
   box-shadow: 0px 12px 30px rgb(0, 0, 0, 0.45);
   opacity: 1;
-  transition: all 500ms 800ms;
+  transition: visbility 600ms 800ms, opacity 600ms 800ms, color 500ms ease,
+    background-color 500ms ease;
 }
 
 .scroll {
