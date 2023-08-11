@@ -18,7 +18,6 @@ function contact(event) {
     .then(() => {
       loading.classList -= " modal__overlay--visible";
       success.classList += " modal__overlay--visible";
-      console.log("it worked g");
     })
     .catch(() => {
       loading.classList -= " modal__overlay--visible";
@@ -53,7 +52,7 @@ function moveBackground(event) {
   const shapes = document.querySelectorAll(".shape");
   const x = event.clientX * scaleFactor;
   const y = event.clientY * scaleFactor;
-  console.log(x, y);
+
   for (let i = 0; i < shapes.length; ++i) {
     if (i % 2 == 0) {
       shapes[i].style.transform = `translate(${x}px , ${y}px)`;
