@@ -255,6 +255,7 @@ MODAL
 .modal__about {
   background-color: rgb(245, 245, 245);
   transform: translateX(-110%);
+  padding: 40px 32px;
 }
 
 .modal__contact {
@@ -276,9 +277,14 @@ MODAL
 }
 
 .modal__language {
-  width: 25%;
+  width: calc(100% / 3);
   position: relative;
-  padding: 1rem;
+  padding: 16px;
+}
+
+.modal__language--img {
+  max-height: 90px;
+  max-width: 90px;
 }
 
 .language__name {
@@ -834,6 +840,13 @@ width = 80vw
 }
 /* PHONES */
 
+@media (max-width: 550px) {
+  .project__description--para {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
 @media (max-width: 480px) {
   .nav__link--list {
     justify-content: space-between;
@@ -874,11 +887,6 @@ width = 80vw
 
   .project__description--sub-title {
     text-align: center;
-  }
-
-  .project__description--para {
-    visibility: hidden;
-    position: absolute;
   }
 
   .project__description--links {
