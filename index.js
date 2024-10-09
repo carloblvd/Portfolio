@@ -6,7 +6,8 @@ function contact(event) {
   event.preventDefault();
   const loading = document.querySelector(".modal__overlay--loading");
   const success = document.querySelector(".modal__overlay--success");
-  loading.classList += " modal__overlay--visible";
+
+  loading.classList.add("modal__overlay--visible"); // Added class
 
   emailjs
     .sendForm(
@@ -16,17 +17,15 @@ function contact(event) {
       "fUrOyNKYMUln64o4F"
     )
     .then(() => {
-      loading.classList -= " modal__overlay--visible";
-      success.classList += " modal__overlay--visible";
+      loading.classList.remove("modal__overlay--visible"); // Removed class
+      success.classList.add("modal__overlay--visible");
     })
     .catch(() => {
-      loading.classList -= " modal__overlay--visible";
+      loading.classList.remove("modal__overlay--visible"); // Removed class
       alert(
         "The email service is temporarily unavailable. Please contact me directly at carloblvd@gmail.com"
       );
     });
-
-  loading.classList += " modal__overlay--visible";
   setTimeout(() => {}, 1000);
 }
 
