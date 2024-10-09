@@ -70,6 +70,10 @@ section {
   font-weight: bold;
 }
 
+.button:focus {
+  outline: 3px solid #ffdd57; /* Make the outline clear and visible */
+}
+
 .click {
   transition: all 300ms ease;
 }

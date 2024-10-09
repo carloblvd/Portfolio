@@ -46,27 +46,43 @@
       onmousemove="moveBackground(event)">
       <nav>
         <figure class="nav__logo logo">
-          <img id="personal-logo" src="./assets/carlo pic.jpg" alt="" />
+          <img
+            id="personal-logo"
+            src="./assets/carlo pic.jpg"
+            alt="Picture of Carlo Munoz" />
         </figure>
         <ul class="nav__link--list">
           <li class="nav__link">
             <a
               class="nav__link--anchor nla__about"
               href="#about"
+              aria-label="Toggle Message Modal On"
               onclick="toggleModal()"
               >About</a
             >
           </li>
           <li class="nav__link">
-            <a class="nav__link--anchor" href="#projects">Projects</a>
+            <a
+              class="nav__link--anchor"
+              aria-label="Go To Projects Section"
+              href="#projects"
+              >Projects</a
+            >
           </li>
           <li class="nav__link">
-            <a class="nav__link--anchor" href="#" onclick="toggleModal()"
+            <a
+              class="nav__link--anchor"
+              href="#"
+              aria-label="Toggle Message Modal On"
+              onclick="toggleModal()"
               >Contact</a
             >
           </li>
           <li class="nav__link click">
-            <a class="nav__link--anchor" href="#"
+            <a
+              class="nav__link--anchor"
+              href="#"
+              aria-label="Toggle Contrast of Page"
               ><i class="fas fa-adjust" onclick="toggleContrast()"></i>
             </a>
           </li>
@@ -80,7 +96,10 @@
             passion for building web applications with great user experiences.
             <br />
             Here's a bit more
-            <button class="green bold about-me__button" onclick="toggleModal()">
+            <button
+              class="green bold about-me__button"
+              aria-label="Toggle Message Modal On"
+              onclick="toggleModal()">
               about me.
             </button>
           </p>
@@ -89,25 +108,28 @@
               href="https://www.linkedin.com/in/carlo-munoz-04069a164"
               target="_blank"
               class="social__link click"
+              aria-label="Carlo Munoz LinkedIn Page"
               ><i class="fab fa-linkedin-in"></i
             ></a>
             <a
               href="https://github.com/carloblvd"
               target="_blank"
               class="social__link click"
+              aria-label="Carlo Munoz Github Page"
               ><i class="fab fa-github"></i
             ></a>
             <a
               href="https://docs.google.com/document/d/e/2PACX-1vQ56q_dTGeGd53YGTs1Q90U75sxS_GORNLdOLgnjVWcSHLZbf_p-85CkeiVcQ_vzkGgNWVdgx9U6cXP/pub"
               target="_blank"
               class="social__link click"
+              aria-label="Carlo Munoz Resume Link"
               ><i class="fas fa-file-alt"></i
             ></a>
           </ul>
         </div>
       </header>
 
-      <a href="#projects" class="scroll">
+      <a href="#projects" class="scroll" aria-label="Carlo Munoz Projects">
         <div class="scroll__icon click"></div>
       </a>
       <div class="modal">
@@ -187,6 +209,7 @@
         <div class="modal__half modal__contact">
           <i
             class="fas fa-times white modal__exit click"
+            aria-label="Toggle Message Modal Off"
             onclick="toggleModal()"></i>
           <h3 class="modal__title modal__title--contact white">
             Let's have a chat!
@@ -211,24 +234,25 @@
                 name="message"
                 required></textarea>
             </div>
-            <button id="contact__submit" class="form__submit">
+            <button
+              id="contact__submit"
+              class="form__submit"
+              aria-label="Send Message Button">
               Send it my way!
             </button>
           </form>
           <div class="modal__overlay modal__overlay--loading">
             <i class="fas fa-spinner"></i>
           </div>
-          <div class="modal__overlay modal__overlay--success">
+          <div
+            class="modal__overlay modal__overlay--success"
+            aria-live="polite">
             Thank you for the message, looking forward to speaking with you
             soon!
           </div>
         </div>
       </div>
-      <a href="#">
-        <button class="mail__btn click" onclick="toggleModal()">
-          <i class="fas fa-envelope"></i>
-        </button>
-      </a>
+
       <img
         src="./assets/semi circle.svg"
         alt="Background Shape"
@@ -302,13 +326,15 @@
                     <a
                       target="_blank"
                       href="https://github.com/carloblvd/Happy-Hour-Bars-NYC"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Happy Hour Bar Directory Github, Carlo Munoz Project.">
                       <i class="fab fa-github"></i>
                     </a>
                     <a
                       target="_blank"
                       href="https://happy-hour-bars-nyc.vercel.app/"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Happy Hour Bar Directory, Carlo Munoz Project.">
                       <i class="fas fa-link"></i>
                     </a>
                   </div>
@@ -339,13 +365,15 @@
                     <a
                       target="_blank"
                       href="https://github.com/carloblvd/carlo-internship"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to NFT Marketplace Github, Carlo Munoz Project.">
                       <i class="fab fa-github"></i>
                     </a>
                     <a
                       target="_blank"
                       href="https://carlo-internship.netlify.app/"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to NFT Marketplace, Carlo Munoz Project.">
                       <i class="fas fa-link"></i>
                     </a>
                   </div>
@@ -377,13 +405,15 @@
                     <a
                       target="_blank"
                       href="https://github.com/carloblvd/Movie-search-react"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Movie Search Engine Github, Carlo Munoz Project.">
                       <i class="fab fa-github"></i>
                     </a>
                     <a
                       target="_blank"
                       href="https://cdbm-movie-search-react.netlify.app"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Movie Search Engine, Carlo Munoz Project.">
                       <i class="fas fa-link"></i>
                     </a>
                   </div>
@@ -415,13 +445,15 @@
                     <a
                       target="_blank"
                       href="https://github.com/carloblvd/React-Library-Ecommerce-Website"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Library Ecommerce Website Github, Carlo Munoz Project.">
                       <i class="fab fa-github"></i>
                     </a>
                     <a
                       target="_blank"
                       href="https://cdbm-library-ecommerce-website.netlify.app/"
-                      class="project__description--link">
+                      class="project__description--link"
+                      aria-label="Link to Library Ecommerce Website, Carlo Munoz Project.">
                       <i class="fas fa-link"></i>
                     </a>
                   </div>
@@ -436,7 +468,10 @@
     <footer>
       <div class="container">
         <div class="row footer__row">
-          <a href="#landing-page" class="footer__anchor">
+          <a
+            href="#landing-page"
+            class="footer__anchor"
+            aria-label="Go to top of page">
             <figure class="footer__logo logo">
               <img
                 class="footer__img"
@@ -455,6 +490,7 @@
               <a
                 href="https://github.com/carloblvd"
                 target="_blank"
+                aria-label="Carlo Munoz Github Page"
                 class="footer__link--anchor"
                 >GitHub</a
               >
@@ -464,13 +500,18 @@
               <a
                 href="https://www.linkedin.com/in/carlo-munoz-04069a164"
                 target="_blank"
+                aria-label="Carlo Munoz LinkedIn Page"
                 class="footer__link--anchor"
                 >LinkedIn</a
               >
             </li>
             <li
               class="footer__link link__hover-effect link__hover-effect--white">
-              <a href="#" class="footer__link--anchor" onclick="toggleModal()"
+              <a
+                href="#"
+                class="footer__link--anchor"
+                aria-label="Toggle Message Modal On"
+                onclick="toggleModal()"
                 >Contact</a
               >
             </li>
@@ -479,6 +520,7 @@
               <a
                 href="/assets/Carlo Munoz Resume.pdf"
                 target="_blank"
+                aria-label="Carlo Munoz Resume Link"
                 class="footer__link--anchor"
                 >Resume</a
               >
@@ -488,7 +530,10 @@
         </div>
       </div>
       <a href="#">
-        <button class="mail__btn click" onclick="toggleModal()">
+        <button
+          class="mail__btn click"
+          aria-label="Toggle Message Modal On"
+          onclick="toggleModal()">
           <i class="fas fa-envelope"></i>
         </button>
       </a>
