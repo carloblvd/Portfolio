@@ -9,7 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carlo Munoz Portfolio</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'" />
+
     <script src="./index.js" defer></script>
     <link
       rel="stylesheet"
@@ -79,7 +84,9 @@
             passion for building web applications with great user experiences.
             <br />
             Here's a bit more
-            <a class="green bold" onclick="toggleModal()"> about me.</a>
+            <button class="green bold about-me__button" onclick="toggleModal()">
+              about me.
+            </button>
           </p>
           <ul class="social__links">
             <a
@@ -126,10 +133,10 @@
             I began my career as a
             <span class="green bold">restaurant manager</span>
             at a fine dining Italian restaurant, gaining valuable skills in
-            <span class="green bold">communication</span>
-            ,
+            <span class="green bold">communication,</span>
+
             <span class="green bold">leadership</span>
-            , and
+            and
             <span class="green bold">teamwork</span>
             . While I enjoyed creating memorable experiences for customers, I
             now aspire to explore a more suitable path aligned with my
@@ -226,15 +233,42 @@
           <i class="fas fa-envelope"></i>
         </button>
       </a>
-      <img src="./assets/semi circle.svg" class="shape shape--0" />
-      <img src="./assets/circle.svg" class="shape shape--1" />
-      <img src="./assets/squiggly.svg" class="shape shape--2" />
-      <img src="./assets/circle.svg" class="shape shape--3" />
-      <img src="./assets/triangle.svg" class="shape shape--4" />
-      <img src="./assets/circle.svg" class="shape shape--5" />
-      <img src="./assets/squiggly.svg" class="shape shape--6" />
-      <img src="./assets/circle.svg" class="shape shape--7" />
-      <img src="./assets/semi circle.svg" class="shape shape--8" />
+      <img
+        src="./assets/semi circle.svg"
+        alt="Background Shape"
+        class="shape shape--0" />
+      <img
+        src="./assets/circle.svg"
+        alt="Background Shape"
+        class="shape shape--1" />
+      <img
+        src="./assets/squiggly.svg"
+        alt="Background Shape"
+        class="shape shape--2" />
+      <img
+        src="./assets/circle.svg"
+        alt="Background Shape"
+        class="shape shape--3" />
+      <img
+        src="./assets/triangle.svg"
+        alt="Background Shape"
+        class="shape shape--4" />
+      <img
+        src="./assets/circle.svg"
+        alt="Background Shape"
+        class="shape shape--5" />
+      <img
+        src="./assets/squiggly.svg"
+        alt="Background Shape"
+        class="shape shape--6" />
+      <img
+        src="./assets/circle.svg"
+        alt="Background Shape"
+        class="shape shape--7" />
+      <img
+        src="./assets/semi circle.svg"
+        alt="Background Shape"
+        class="shape shape--8" />
     </section>
 
     <section id="projects" aria-label="Carlo Munoz Portfolio Projects">
